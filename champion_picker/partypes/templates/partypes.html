@@ -1,0 +1,23 @@
+{% extends "base.html" %} {% load static %} {% block head %}
+<link rel="stylesheet" href="{% static 'partypes.css' %}" />
+{% endblock head %} {% block content %}
+<div id="container">
+  {% regroup champions by partype_id as grouped %} {% for partype in grouped %}
+  <div class="partype">
+    <div>
+      <h1 id="{{ partype.grouper.name.split.0 }}">{{ partype.grouper.name }}</h1>
+      <span class="info">{{ partype.grouper.info }}</span>
+    </div>
+    <div class="champions">
+      {% for champion in partype.list %}
+      <a href="/champion/{{ champion.name }}" class="link">
+        <img src="https://ddragon.leagueoflegends.com/cdn/14.1.1/img/champion/{{ champion.alias }}.png" class="mini" alt="{{ champion.name }}" title="{{ champion.name }}" />
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+  {% endfor %}
+  <a href="#" id="top">Back to top</a>
+</div>
+<script src="{% static 'partypes.js' %}"></script>
+{% endblock content %}

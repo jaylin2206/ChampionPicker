@@ -1,0 +1,31 @@
+{% extends "base.html" %} {% load static %} {% block head %}
+<link rel="stylesheet" href="{% static 'classes.css' %}" />
+{% endblock head %} {% block content %}
+<div id="container">
+  <div id="header">
+    <div class="row 2">
+      {% for class in classes %}
+      <div class="col heading"><a href="#{{ class.name }}">{{ class.name }}</a><br /></div>
+      {% endfor %}
+    </div>
+  </div>
+
+  {% regroup champions by class as grouped %} {% for class in grouped %}
+  <div class="class">
+    <div>
+      <h1 id="{{ class.grouper.name }}">{{ class.grouper.name }}</h1>
+      <span class="info">{{ class.grouper.info }}</span>
+    </div>
+    <div class="champions">
+      {% for champion in class.list|dictsort:"champion.name" %}
+      <a href="/champion/{{ champion.champion.name }}" class="link">
+        <img src="https://ddragon.leagueoflegends.com/cdn/14.1.1/img/champion/{{ champion.champion.alias }}.png" class="mini" alt="{{ champion.name }}" title="{{ champion.name }}" />
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+  {% endfor %}
+  <a href="#" id="top">Back to top</a>
+</div>
+<script src="{% static 'classes.js' %}"></script>
+{% endblock content %}

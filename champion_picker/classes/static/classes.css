@@ -1,0 +1,112 @@
+body {
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #b4d4ff;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+:target {
+  color: #ef7846;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#header {
+  width: 80%;
+  text-align: center;
+  margin: 0.5em 0;
+}
+
+.heading {
+  font-size: 2em;
+}
+
+.class {
+  width: 80%;
+  text-align: center;
+}
+
+.info {
+  font-size: 1.2em;
+}
+
+.champions {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0.5em 0;
+  justify-content: center;
+}
+
+.mini {
+  display: block;
+  transition: 0.1s ease-in-out;
+}
+
+.mini:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 15px #8785a2;
+}
+
+#top {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  background-color: #8785a2;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  font-size: 1.5em;
+  cursor: pointer;
+  animation: fade 0.2s ease-in-out;
+  display: none;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#header .row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #6c757d;
+  padding: 0.5em 0;
+}
+
+#header .col {
+  flex-grow: 1;
+}
+
+#header a {
+  color: #b4d4ff;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: color 0.3s ease-in-out;
+}
+
+#header a:hover {
+  color: #ef7846;
+}
+
+#header br {
+  display: none;
+}
+
+#header .col:not(:last-child) {
+  border-right: 1px solid #ffffff;
+}

@@ -1,0 +1,103 @@
+body {
+  background-color: #dcd6f7;
+}
+
+#container {
+  font-family: 'Roboto', sans-serif;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#title {
+  gap: 1em;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#name {
+  text-align: center;
+  font-size: 3em;
+}
+
+#info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+#attributes {
+  margin: 0.5em 0;
+}
+
+.class {
+  margin-right: 10px;
+  padding: 5px 10px;
+  color: #fff;
+  background-color: #00adb5;
+  border-radius: 3px;
+}
+
+.bold {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.partype-badge {
+  padding: 5px 10px;
+  background-color: #5cb85c;
+  color: #fff;
+  border-radius: 3px;
+  margin-right: 10px;
+}
+
+#blurb {
+  width: 70%;
+  font-size: 1.3em;
+  overflow: hidden;
+}
+
+.overflow-ellipsis {
+  text-overflow: ellipsis;
+}
+
+#splash {
+  cursor: pointer;
+}
+
+#image {
+  display: flex;
+  align-items: center;
+  font-size: 2em;
+  gap: 1em;
+}
+
+#images {
+  display: flex;
+  align-items: center;
+}
+
+#skin {
+  font-size: 2em;
+  margin: 0.5em;
+}
+
+.arrow {
+  font-size: 3em;
+  cursor: pointer;
+  user-select: none;
+}
+
+.arrow:hover {
+  color: #71c9ce;
+  text-shadow: 0 0 20px rgba(227, 253, 253, 0.2);
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}

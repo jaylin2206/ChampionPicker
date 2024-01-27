@@ -1,0 +1,38 @@
+{% extends "base.html" %} {% load static %} {% block head %}
+<link rel="stylesheet" href="{% static 'css/champions.css' %}" />
+{% endblock head %} {% block content %}
+<div id="top">
+  <h1 id="main">Find Your Champion</h1>
+  <input type="text" id="search" placeholder="search by name" />
+</div>
+<div id="mode" class="d-flex justify-content-end">
+  <div class="btn-group me-5 mb-3" id="select-format" role="group" aria-label="Basic radio toggle button group">
+    <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked />
+    <label class="btn btn-outline-dark" for="btnradio1">Extended</label>
+
+    <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" />
+    <label class="btn btn-outline-dark" for="btnradio2">Compact</label>
+  </div>
+</div>
+<div class="container">
+  {% for champion in champions %}
+  <div class="champion-card" id="{{ champion.name }}">
+    <div class="card-top">
+      <img src="https://ddragon.leagueoflegends.com/cdn/14.1.1/img/champion/{{ champion.alias }}.png" class="mini" />
+      <div class="champion-info">
+        <a href="champion/{{ champion.name }}" class="title"> #{{ champion.id }}: {{ champion.name }}, {{ champion.title }} </a>
+        <div class="attributes">
+          <a href="/partypes/#{{ champion.partype_id.name.split.0 }}" class="bold partype-badge">{{ champion.partype_id.name }}</a>
+          {% for class in champion.classes.all %}
+          <a href="/classes/#{{class.name}}" class="bold class">{{ class.name }}</a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <div class="blurb">{{ champion.blurb }}</div>
+  </div>
+  {% endfor %}
+  <div id="none">no champion found try another query</div>
+</div>
+<script src="{% static 'js/champions.js' %}"></script>
+{% endblock content %}

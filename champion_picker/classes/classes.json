@@ -1,0 +1,14 @@
+[
+  { "model": "classes.class", "pk": 1, "fields": { "name": "Fighter",
+    "info": "Also commonly known as bruisers, Fighters have both defensive and offensive capabilities, and they are great at drawn out duels." } },
+  { "model": "classes.class", "pk": 2, "fields": { "name": "Tank",
+    "info": "Tanks have high defensive stats, and are capable of absorbing a lot of damage. However, their damage output is lower." }},
+  { "model": "classes.class", "pk": 3, "fields": { "name": "Mage",
+    "info": "Mages specialize in dealing magic damage, mainly relying on casting spells to do so." }},
+  { "model": "classes.class", "pk": 4, "fields": { "name": "Assassin",
+    "info": "Assassins are able to provide a quick burst of damage on a vulnerable threat." }},
+  { "model": "classes.class", "pk": 5, "fields": { "name": "Marksman",
+    "info": "Marksmen specialize in dealing high, consistent damage and have the highest potential damage output." }},
+  { "model": "classes.class", "pk": 6, "fields": { "name": "Support",
+    "info": "Supports assist the team, by providing shields, healing, and buffs to their teammates." }}
+]

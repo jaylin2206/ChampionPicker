@@ -1,0 +1,26 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#nav {
+  padding: 1em;
+  background-color: #1b262c;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#nav > a {
+  font-family: 'Lato', sans-serif;
+  font-size: 3em;
+  text-decoration: none;
+  color: #bbe1fa;
+}
+
+#nav > a:hover {
+  color: #b83b5e;
+}
+
+.active {
+  color: #b83b5e;
+}

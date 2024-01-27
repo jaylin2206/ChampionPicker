@@ -1,0 +1,30 @@
+{% extends "base.html" %} {% load static %} {% block head %}
+<link rel="stylesheet" href="{% static 'css/champion.css' %}" />
+{% endblock head %} {% block content %}
+<div id="container">
+  <div id="title">
+    <div id="mini"><img src="https://ddragon.leagueoflegends.com/cdn/14.1.1/img/champion/{{ data.alias }}.png" /></div>
+    <div id="name">#<span id="id">{{ data.id }}</span>: {{ name }}, {{ data.title }}</div>
+  </div>
+  <div id="info">
+    <div id="attributes">
+      <a href="/partypes/#{{ data.partype_id.name.split.0 }}" class="bold partype-badge">{{ data.partype_id.name }}</a>
+      {% for class in data.classes.all %}
+      <span class="bold class"><a href="/classes/#{{class.name}}">{{ class.name }}</a></span>
+      {% endfor %}
+    </div>
+    <div id="blurb">{{ data.blurb }}</div>
+  </div>
+  <span id="skin">{{ name }}</span>
+  <div id="image">
+    <span id="back" class="arrow">&lt;</span>
+    <div id="images"></div>
+    <span id="next" class="arrow">&gt;</span>
+  </div>
+</div>
+<script>
+  let skins = {{ skins|safe }}
+  for (let i=0; i<skins.length; i++) skins[i] = {"id": skins[i].pk, name: skins[i].fields.name}
+</script>
+<script src="{% static 'js/champion.js' %}"></script>
+{% endblock content %}
